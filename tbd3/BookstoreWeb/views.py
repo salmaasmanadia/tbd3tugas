@@ -218,7 +218,7 @@ def newStaff(request):
         	last_name = request.POST['last_name']
         	email = request.POST['email']
         	address_name = request.POST['address_name']
-        	store_name = request.POST['store_name']
+        	store_name = request.POST['store.name']
         	last_update = request.POST['last_update']
 
         	messages.success(request, "There was an error in your form! Please try again...")
@@ -227,7 +227,7 @@ def newStaff(request):
         		'last_name': last_name, 
         		'email':email, 
         		'address_name': address_name,
-        		'store_name': store_name,
+        		'store.name': store_name,
         		'last_update': last_update
         		})
         messages.success(request,('Your form has ben submitted successfully'))
