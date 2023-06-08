@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+ <h1>Insert New Order</h1>
+  <br><br>
+
+	<form method = "POST" action = "{% url 'newOrder' %}">
+	{% csrf_token %}
+	  <div class="form-group">
+	    <input type="text" class="form-control" id="customer" name="customer" placeholder="Nama Customer" value="{{first_name} {last_name}}">
+	  </div>
+
+	  <div class="form-group">
+	    <input type="text" class="form-control" id="staff" name="staff" placeholder="Nama Staff" value="{{staff_name}}">
+	  </div>
+
+	  <div class="form-group">
+	    <input type="date" class="form-control" id="order_date" name="order_date" placeholder="Tanggal Order" value="{{order_date}}">
+	  </div>
+
+	  <div class="form-group">
+	    <input type="text" class="form-control" id="total_amount" name="total_amount" placeholder="Jumlah Total Order" value="{{total_amount}}">
+	  </div>
+
+	   <div class="form-group">
+	   	<label>Terakhir Update</label>
+         <input type="datetime-local" class="form-control" id="last_update" name="last_update" placeholder="Terakhir Update" value="{{last_update}}">
+       </div>
+
+	  <button type="submit" class="btn btn-primary">Simpan</button>
+	</form>
+
+
+{% endblock %}

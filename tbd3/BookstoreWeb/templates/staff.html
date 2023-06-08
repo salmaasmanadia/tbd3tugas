@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+	<h1>Staff Database</h1>
+
+	{% for data in staff_data %}
+		<strong>{{data.staff_id}}</strong><br>
+		Nama : {{data.first_name}} {{data.last_name}}<br>
+		Email : {{data.email}}<br>
+		Alamat : {{data.address.address_name}}<br>
+		Toko : {{data.store.store_name}}<br>
+		Terakhir Update : {{data.last_update}}<hr>
+	{% endfor %}
+{% endblock %}

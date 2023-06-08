@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+ <h1>Insert New Address</h1>
+  <br><br>
+
+  <form method = "POST" action = "{% url 'newAddress' %}">
+  {% csrf_token %}
+        <form>
+  <div class="form-group">
+    <input type="text" class="form-control" id="address_id" name="address_id" placeholder="Address ID" value="{{address_id}}">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" id="address_name" name="address_name" placeholder="Alamat" value="{{address_name}}">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" id="district" name="district" placeholder="Kecamatan" value="{{district}}">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" id="city" name="city" placeholder="Kota/Kabupaten" value="{{city}}">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" id="country" name="country" placeholder="Negara" value="{{country}}">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" id="postal_code" name="postal_code" placeholder="Kode Pos" value="{{postal_code}}">
+  </div>
+
+  <div class="form-group">
+    <label>Last Update</label>
+    <input type="datetime-local" class="form-control" id="last_update" name="last_update" placeholder="Terakhir Update" value="{{last_update}}">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Simpan</button>
+</form>
+
+{% endblock %}

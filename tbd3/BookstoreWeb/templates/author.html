@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+	<h1>Author Database</h1>
+
+	{% for data in author_data %}
+		<strong>{{data.author_id}}</strong><br>
+		Nama : {{data.author_name}}<br>
+		Jenis Kelamin : {{data.gender}}<br>
+		Tanggal Lahir : {{data.birthdate}}<br>
+		Alamat : {{data.country}}<br>
+		Terakhir Update : {{data.last_update}}<hr>
+	{% endfor %}
+
+{% endblock %}

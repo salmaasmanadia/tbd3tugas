@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+ <h1>Insert New Book</h1>
+  <br><br>
+
+	<form method = "POST" action = "{% url 'newOrder' %}">
+	{% csrf_token %}
+		<form>
+  <div class="form-group">
+    <input type="number" class="form-control" id="book_id" name="book_id" placeholder="Book ID" min = 0 value="{{book_id}}">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" id="title" name="title" placeholder="Judul" value="{{ title }}">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" id="author" name="author" placeholder="Penulis" value="{{ author_name }}">
+  </div>
+
+  <div class="form-group">
+  <select class="form-control" id="category" name="category" placeholder="Kategori">
+    <option value="Fiction">Fiction</option>
+    <option value="Non fiction">Non fiction</option>
+    <option value="Childrens Books">Children's Books</option>
+    <option value="Academic Books">Academic Books</option>
+    <option value="Poetry">Poetry</option>
+    <option value="Self-help">Self-help</option>
+    <option value="Travel">Travel</option>
+    <option value="Business">Business</option>
+    <option value="else">Lainnya</option>
+  	</select>
+	</div>
+
+	<div class="form-group">
+  	<select class="form-control" id="genre" name="genre" placeholder="Genre">
+    <option value="Mystery">Mystery</option>
+    <option value="Science Fiction">Science Fiction</option>
+    <option value="Fantasy">Fantasy</option>
+    <option value="Romance">Romance</option>
+    <option value="Historical Fiction">Historical Fiction</option>
+    <option value="Thriller">Thriller</option>
+    <option value="Horror">Horror</option>
+    <option value="Literary Fiction">Literary Fiction</option>
+    <option value="Young Adult">Young Adult</option>
+    <option value="Contemporary Fiction">Contemporary Fiction</option>
+    <option value="Biography">Biography</option>
+    <option value="History">History</option>
+    <option value="Memoir">Memoir</option>
+    <option value="Self-help">Self-help</option>
+    <option value="Science">Science</option>
+    <option value="Business">Business</option>
+    <option value="Psychology">Psychology</option>
+    <option value="Philosophy">Philosophy</option>
+    <option value="Travel">Travel</option>
+    <option value="Cookbooks">Cookbooks</option>
+    <option value="Picture Books">Picture Books</option>
+    <option value="Early Readers">Early Readers</option>
+    <option value="Chapter Books">Chapter Books</option>
+    <option value="Middle Grade">Middle Grade</option>
+    <option value="Textbooks">Textbooks</option>
+    <option value="Research Papers">Research Papers</option>
+    <option value="Journals">Journals</option>
+    <option value="Academic Monographs">Academic Monographs</option>
+    <option value="Reference Books">Reference Books</option>
+    <option value="Contemporary Poetry">Contemporary Poetry</option>
+    <option value="Classic Poetry">Classic Poetry</option>
+    <option value="Epic Poetry">Epic Poetry</option>
+    <option value="Sonnets">Sonnets</option>
+    <option value="Personal Development">Personal Development</option>
+    <option value="Relationships">Relationships</option>
+    <option value="Motivation">Motivation</option>
+    <option value="Mindfulness">Mindfulness</option>
+    <option value="Travel Guides">Travel Guides</option>
+    <option value="Adventure Travel">Adventure Travel</option>
+    <option value="Travel Memoirs">Travel Memoirs</option>
+    <option value="Travel Essays">Travel Essays</option>
+    <option value="Entrepreneurship">Entrepreneurship</option>
+    <option value="Management">Management</option>
+    <option value="Marketing">Marketing</option>
+    <option value="Finance">Finance</option>
+    <option value="Leadership">Leadership</option>
+    <option value="else">Lainnya</option>
+ 	</select>
+	</div>
+
+  <div class="form-group">
+  	<label>Tanggal Publikasi</label>
+    <input type="date" class="form-control" id="publication_date" name="publication_date" placeholder="Tanggal Publikasi" value="{{publication_date}}">
+  </div>
+	 
+	<div class="form-group">
+	  <input type="number" class="form-control" id="rating" name="rating" placeholder="Rating" min="1" max="5" value="{{ rating }}">
+	</div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" id="price" name="price" placeholder="Harga" value="{{ price }}">
+  </div>
+
+  <div class="form-group">
+  	<label>Terakhir Update</label>
+    <input type="datetime-local" class="form-control" id="last_update" name="last_update" placeholder="Terakhir Update" value="{{last_update}}">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Simpan</button>
+</form>
+
+{% endblock %}

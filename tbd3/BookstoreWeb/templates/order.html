@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+	<h1>Order Database</h1>
+
+	{% for data in order_data %}
+		<strong>{{data.order_id}}</strong><br>
+		Customer : {{data.customer.first_name}} {{data.customer.last_name}}<br>
+		Staff : {{data.staff.staff_name}}<br>
+		Tanggal Order : {{data.order_date}}<br>
+		Jumlah Total : {{data.total_amount}}<br>
+		Terakhir Update : {{data.last_update}}<hr>
+	{% endfor %}
+
+{% endblock %}

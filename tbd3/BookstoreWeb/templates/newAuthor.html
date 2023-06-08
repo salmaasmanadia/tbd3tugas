@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+   
+  <h1>Insert New Author</h1>
+  <br><br>
+
+  <form method = "POST" action = "{% url 'newAuthor' %}">
+      {% csrf_token %}
+    <div class="form-group">
+      <input type="text" class="form-control" id="author_name" name="author_name" placeholder="Nama" value="{{author_name}}">
+    </div>
+
+    <div class="form-group">
+      <select class="form-control" id="gender" name="gender">
+        <option {% if data.gender == 'male' %}selected{% endif %}>Male</option>
+        <option {% if data.gender == 'female' %}selected{% endif %}>Female</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Tanggal Lahir</label>
+      <input type="date" class="form-control" id="birthdate" name="birthdate" placeholder="Tanggal Lahir" value="{{birthdate}}">
+    </div>
+
+    <div class="form-group">
+      <input type="text" class="form-control" id="country" name="country" placeholder="Alamat" value="{{address_name}}">
+    </div>
+
+     <div class="form-group">
+      <label>Terakhir Update</label>
+      <input type="datetime-local" class="form-control" id="last_update" name="last_update" placeholder="Terakhir Update" value="{{last_update}}">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Simpan</button>
+  </form>
+
+{% endblock %}
+

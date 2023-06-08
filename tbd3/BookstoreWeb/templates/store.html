@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+	<h1>Store Database</h1>
+
+	{% for data in store_data %}
+		<strong>{{data.store_id}}</strong><br>
+		Nama : {{data.name}}<br>
+		Alamat : {{data.address.address_name}}<br>
+		Terakhir Update : {{data.last_update}}<hr>
+	{% endfor %}
+
+{% endblock %}

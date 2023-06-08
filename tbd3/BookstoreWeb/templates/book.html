@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h1>Book Database</h1>
+
+    {% for data in book_data %}
+        <strong>{{data.book_id}}</strong><br>
+        Judul : {{data.title}}<br>
+        Author : {{data.author.author_name}}<br>
+        Genre : {{data.genre}}<br>
+        Kategori : {{data.category}}<br>
+        Tanggal Publikasi : {{data.publication_date}}<br>
+        Rating : {{data.rating}}<br>
+        Harga : {{data.price}}<br>
+        Terakhir Update : {{data.last_update}}<hr>
+    {% endfor %}
+
+{% endfor %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+	<h1>Payment Database</h1>
+
+	{% for data in payment_data %}
+		<strong>{{data.payment_id}}</strong><br>
+		Order : {{data.order.order_id}}<br>
+		Tanggal Pembayaran : {{data.payment_date}}<br>
+		Jumlah Tagihan : {{data.amount}}<br>
+		Terakhir Update : {{data.last_update}}<hr>
+	{% endfor %}
+	
+{% endblock %}

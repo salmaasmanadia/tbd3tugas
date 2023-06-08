@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h1>Insert New Staff</h1>
+    <br><br>
+
+      <form method = "POST" action = "{% url 'newStaff' %}">
+          {% csrf_token %}
+        <div class="form-group">
+          <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Nama Depan" value="{{ first_name }}">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Nama Belakang" value="{{last_name}}">
+        </div>
+        <div class="form-group">
+          <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="{{email}}">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" id="address_name" name="address_name" placeholder="Alamat" value="{{address_name}}">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" id="store_name" name="store" placeholder="Toko" value="{{store_name}}">
+        </div>
+        <div class="form-group">
+          <input type="datetime-local" class="form-control" id="last_update" name="last_update" placeholder="Terakhir Update" value="{{last_update}}">
+        </div>
+        <button type="submit" class="btn btn-primary">Simpan</button>
+      </form>
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+ <h1>Insert New Store</h1>
+  <br><br>
+
+	<form method="POST" action="{% url 'newStore' %}">
+  {% csrf_token %}
+
+  <div class="form-group">
+    <input type="text" class="form-control" id="id" name="store_id" placeholder="ID Toko" value="{{ store_id }}">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" id="name" name="name" placeholder="Nama Toko" value="{{ name }}">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" id="id_address_name" name="address_name" placeholder="Alamat" value="{{address_name}}">
+  </div>
+
+  <div class="form-group">
+  	<label>Terakhir Update</label>
+    <input type="datetime-local" class="form-control" id="last_update" name="last_update" placeholder="Terakhir Update" value="{{ last_update }}">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Simpan</button>
+</form>
+	  	
+{% endblock %}

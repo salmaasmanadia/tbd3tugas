@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+ <h1>Insert New Payment</h1>
+  <br><br>
+
+  <form method = "POST" action = "{% url 'newPayment' %}">
+  {% csrf_token %}
+    <div class="form-group">
+      <input type="text" class="form-control" id="payment_id" name="payment_id" placeholder="Payment ID" value="{{payment_id}}">
+    </div>
+
+    <div class="form-group">
+      <input type="text" class="form-control" id="order" name="order" placeholder="Order ID" value="{{ order_id }}">
+    </div>
+
+    <div class="form-group">
+      <input type="date" class="form-control" id="payment_date" name="payment_date" placeholder="Tanggal Pembayaran" value="{{payment_date}}">
+    </div>
+
+    <div class="form-group">
+      <input type="text" class="form-control" id="amount" name="amount" placeholder="Jumlah Tagihan" value="{{amount}}">
+    </div>
+
+    <div class="form-group">
+      <input type="datetime-local" class="form-control" id="last_update" name="last_update" placeholder="Terakhir Update" value="{{last_update}}">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Simpan</button>
+</form>
+
+{% endblock %}

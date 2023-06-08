@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+	<h1>Address Database</h1>
+
+	{% for data in address_data %}
+		<strong>{{data.address_id}}</strong><br>
+		Alamat : {{data.address_name}}<br>
+		Kecamatan : {{data.district}}<br>
+		Kota/ Kabupaten : {{data.city}}<br>
+		Negara : {{data.country}}<br>
+		Kode Pos  : {{data.postal_code}}<br>
+		Terakhir Update : {{data.last_update}}<hr>
+	{% endfor %}
+
+{% endblock %}
